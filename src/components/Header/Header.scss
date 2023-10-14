@@ -1,0 +1,134 @@
+@import "../../global/variables.scss";
+
+// eslint-disable-next-line
+.Header {
+  width: 100%;
+  position: relative;
+
+  &-top {
+    background-color: $black;
+    height: 100px;
+  }
+
+  &-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-column: 5 / span 9;
+    position: relative;
+  }
+
+  &-openCart {
+    background: none;
+    position: relative;
+    border: none;
+    margin-left: 3rem;
+
+    >img {
+      width: 40px;
+      height: auto;
+    }
+
+    >span {
+      font-size: 18px;
+      position: absolute;
+      top: -20%;
+      left: 100%;
+      color: $orange;
+    }
+  }
+
+  &-logo {
+    grid-column: 1 / span 2;
+    display: flex;
+    align-items: center;
+    color: white;
+
+    >b {
+      color: $orange;
+      font-size: 25px;
+      margin-left: 10px;
+      font-weight: 500;
+    }
+
+    >span {
+      font-family: "gabriela";
+      font-size: 20px;
+    }
+  }
+}
+
+.MenuNav {
+  background-color: $black-700;
+  height: auto;
+
+  &-ul {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  &-li {
+    border-left: 1px solid rgb(113, 113, 113);
+    height: 40px;
+
+    &:last-child {
+      border-right: 1px solid rgb(113, 113, 113);
+    }
+  }
+
+  &-link {
+    height: 100%;
+    color: $whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    padding: 0 4rem;
+    transition: 0.3s;
+
+    &:hover,
+    &:focus {
+      background-color: $orange;
+    }
+  }
+}
+
+.SearchForm {
+  display: flex;
+  align-items: center;
+  height: 40px;
+
+  >input {
+    width: 600px;
+    height: 100%;
+    border: none;
+    background-color: $black-700;
+    padding: 0 1rem;
+    color: whitesmoke;
+
+    &:focus {
+      outline: 1px solid $orange;
+    }
+
+    &::placeholder {
+      color: rgb(196, 196, 196);
+    }
+  }
+
+  >button {
+    background-color: $orange;
+    height: 100%;
+    width: 50px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    >svg {
+      height: auto;
+      width: 50%;
+      color: white;
+    }
+  }
+}

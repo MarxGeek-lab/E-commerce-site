@@ -1,0 +1,15 @@
+.ProductPage {
+    min-height: calc(100vh - 100px);
+
+    &-groupProduct {
+        gap: 30px;
+        .CardProduct {
+            margin: 0;
+            grid-column-end: span 3;
+
+            &-percentReduce {
+                display: none;
+            }
+        }
+    }
+}
