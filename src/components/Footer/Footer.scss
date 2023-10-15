@@ -1,16 +1,25 @@
 @import '../../global/variables.scss';
+@import '../../global/mixins.scss';
 
 .Footer {
     background-color: $black;
-    padding: 4rem 0;
+    padding: 2.6rem 0 0;
+
+    @include tablet-portrait {
+        padding: 1.5rem 0 0 ;
+    }
 
     &-block {
-        border-right: 1px solid $whitesmoke;
+        border-right: 1px solid rgb(66, 66, 66);
 
         &:nth-child(2) {
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            @include tablet-portrait {
+                justify-content: start;
+            }
         }
 
         &:nth-child(3) {
@@ -18,6 +27,16 @@
             align-items: center;
             justify-content: flex-end;
             border-right: none;
+
+            @include tablet-portrait {
+                align-items: start;
+                flex-direction: column;
+                justify-content: start;
+
+                &>span {
+                    margin-bottom: 10px;
+                }
+            }
         }
 
         &>span {
@@ -35,6 +54,13 @@
 
         &:nth-child(3) {
             grid-column: 9 / span 4;
+        }
+
+        @include tablet-portrait {
+            margin-bottom: 20px;
+            grid-column:inherit !important;
+            grid-column-end: span 12 !important;
+            border-right: none;
         }
     }
 
@@ -74,6 +100,10 @@
                 width: 25px;
                 height: auto;
                 margin-right: 20px;
+
+                @include tablet-portrait {
+                    width: 22px;
+                }
             }
         }
     }
@@ -86,9 +116,37 @@
             margin: 0 10px;
 
             &>a>img {
-                width: 25px;
+                width: 20px;
                 height: auto;
             }
+        }
+        @include tablet-portrait {
+            align-items: start;
+
+            &>li {
+                margin: 0 16px 0 0;
+
+                &>a>img {
+                    width: 20px;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    &-copyright {
+        text-align: center;
+        border-top: 1px solid rgb(66, 66, 66);
+        margin-top: 40px;
+        padding: 20px 0;
+
+        &>p {
+            color: white;
+            font-size: 14px;
+        }
+
+        @include tablet-portrait {
+            margin-top: 15px;
         }
     }
 }

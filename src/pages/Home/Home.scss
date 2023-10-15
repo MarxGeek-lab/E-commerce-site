@@ -1,17 +1,13 @@
 @import "../../global/variables.scss";
+@import "../../global/mixins.scss";
 
 .Home {
-    min-height: 80vh;
+    min-height: calc(100vh - 100px);
     padding: 60px 0 150px;
-
-    &-sliderDiv {
-        position: relative;
-        height: 400px;
-    }
 
     &-blockSlide {
         width: 100%;
-        height: 100%;
+        height: 400px;
         position: relative;
     }
 
@@ -33,8 +29,19 @@
             font-size: 20px;
 
             &>h1 {
-                font-size: 55px;
+                font-size: 45px;
             }
+
+            @include tablet-portrait {
+                margin-left: 5rem;
+                &>h1 {
+                    font-size: 30px;
+                }
+            }
+        }
+
+        @include mobile-landscape {
+            display: none;
         }
     }
 }
@@ -42,8 +49,14 @@
 .Carousel {
     width: 70%;
     height: 100%;
+    border: 1px solid;
+    padding: 0% !important;
 
-    &-imgDiv {
+    @include mobile-landscape {
+        width: 100%;
+    }
+
+    &-img {
         width: 100%;
         height: 100%;
 
@@ -65,19 +78,28 @@
         font-size: 22px;
         color: var(--black-700);
         font-weight: bold;
+
+        @include tablet-portrait {
+            font-size: 18px;
+        }
     }
 
     &>a {
         color: rgb(3, 67, 216);
         font-size: 14px;
         text-decoration: underline;
+        white-space: nowrap;
     }
 
     &>span {
         font-size: 13px;
         font-style: italic;
         margin-right: 20%;
-        color: var(--orange);
+        color: $orange;
+
+        @include mobile-landscape {
+            display: none;
+        }
     }
 }
 
@@ -90,14 +112,27 @@
     }
 
     &-groupProduct {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
         gap: 1.5rem;
         margin: 4rem 0;
+        padding: 0;
+
+        @include mobile-portrait {
+            gap: 1rem;
+        }
 
         .CardProduct{
             width: 100%;
             transition: 0.4s;
+            grid-column-end: span 3;
+            margin: 0;
+
+            @include tablet-portrait {
+                grid-column-end: span 4;
+            }
+
+            @include mobile-landscape {
+                grid-column-end: span 6;
+            }
 
             &:hover {
                 transform: scale(1.1);
@@ -144,7 +179,6 @@
     background: url(../../assets/images/images.jpeg);
     background-size: contain;
     margin-top: 100px;
-    border: 1px solid red;
 
     &-text {
         color: white;
@@ -175,5 +209,29 @@
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.408);
+    }
+}
+
+.PromoProduct {
+    &-groupProduct {
+        .CardProduct {
+            background-color: $orange;
+            border: 2px solid $orange;
+            border-radius: 4px;
+    
+            &-nameProd {
+                color: white;
+            }
+            &-priceProd {
+                color: white;
+
+                &>span {
+                    color: white;
+                }
+            }
+            &-groupBtn {
+                display: none;
+            }
+        }
     }
 }

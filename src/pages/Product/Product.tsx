@@ -13,60 +13,60 @@ import product5 from "../../assets/images/product5.jpg";
 import product6 from "../../assets/images/product6.jpg";
 import product7 from "../../assets/images/product7.jpg";
 import product8 from "../../assets/images/product8.jpg";
+import ProductSlide from "../../components/ProductSlider/ProductSlide";
 
+export const products: Products[] = [
+    {
+        name: "Basket",
+        price: 1200,
+        image: product1,
+    },
+    {
+        name: "T-shirt",
+        price: 1200,
+        image: product2,
+    },
+    {
+        name: "Jeans",
+        price: 1500,
+        image: product3,
+    },
+    {
+        name: "Basket",
+        price: 1200,
+        image: product4,
+    },
+    {
+        name: "T-shirt",
+        price: 800,
+        image: product5,
+    },
+    {
+        name: "Jeans",
+        price: 1500,
+        image: product6,
+    },
+    {
+        name: "Basket",
+        price: 1200,
+        image: product7,
+    },
+    {
+        name: "T-shirt",
+        price: 800,
+        image: product7,
+    },
+    {
+        name: "Jeans",
+        price: 1500,
+        image: product8,
+    },
+];
 
 const Product: React.FC = () => {
-
-    const products: Products[] = [
-        {
-            name: "Basket",
-            price: 1200,
-            image: product1,
-        },
-        {
-            name: "T-shirt",
-            price: 1200,
-            image: product2,
-        },
-        {
-            name: "Jeans",
-            price: 1500,
-            image: product3,
-        },
-        {
-            name: "Basket",
-            price: 1200,
-            image: product4,
-        },
-        {
-            name: "T-shirt",
-            price: 800,
-            image: product5,
-        },
-        {
-            name: "Jeans",
-            price: 1500,
-            image: product6,
-        },
-        {
-            name: "Basket",
-            price: 1200,
-            image: product7,
-        },
-        {
-            name: "T-shirt",
-            price: 800,
-            image: product7,
-        },
-        {
-            name: "Jeans",
-            price: 1500,
-            image: product8,
-        },
-    ];
-
     return (
         <div className="ProductPage">
+            <ProductSlide />
             <FilterBox />
             <div className="ProductPage-groupProduct Container">
                 {products.map((product, index) => (

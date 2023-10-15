@@ -1,8 +1,43 @@
 @import "../../global/variables.scss";
+@import "../../global/mixins.scss";
 
 .FilterBox {
-    height: 80px;
-    display: flex;
-    align-items: center;
-    border: 1px solid;
+    min-height: 40px;
+    margin-bottom: 50px;
+    
+    &-title {
+        font-weight: 800;
+        font-size: 16px;
+        margin-right: 20px;
+        color: white;
+        white-space: nowrap;
+    }
+    &-content {
+        border: 1px solid $whitesmoke;
+        background-color: white;
+        border-radius: 4px;
+        padding: 10px;
+        height: 100%;
+        background-color: $orange;
+
+        @include mobile-landscape {
+            flex-direction: column;
+            align-items: start;
+        }
+    }
+
+    &-item {
+        margin: 0 15px;
+
+        >span {
+            margin-right: 2rem;
+            color: white;
+            white-space: nowrap;
+        }
+
+        @include mobile-landscape {
+            margin-top: 40px;
+            margin-left: 0;
+        }
+    }
 }

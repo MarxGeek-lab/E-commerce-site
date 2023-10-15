@@ -5,14 +5,14 @@ import "./CardProduct.scss";
 import add_cart from "../../assets/svg/add-to-cart.svg"
 import whatsapp from "../../assets/svg/whatsapp-logo.svg"
 
-interface CardProductComponentProps {
+interface CardPromoProductComponentProps {
   key: string;
   productName: string;
   productPrice: number;
   productImageSrc: string;
 }
 
-const CardProductComponent: React.FC<CardProductComponentProps> = ({
+const CardPromoProductComponent: React.FC<CardPromoProductComponentProps> = ({
   productName,
   productPrice,
   productImageSrc,
@@ -20,12 +20,13 @@ const CardProductComponent: React.FC<CardProductComponentProps> = ({
 }) => {
   return (
     <div className="CardProduct" key={key}>
+      <div className="CardProduct-percentReduce">25%</div>
       <img className="CardProduct-imgProd" src={productImageSrc} alt={productName} />
       <div className="CardProduct-footerCard">
         <div className="CardProduct-infosProd">
-          <h3 className="CardProduct-nameProd EllipsisLine2">{productName}</h3>
+        <h3 className="CardProduct-nameProd EllipsisLine2">{productName}</h3>
           <h4 className="CardProduct-priceProd">
-            {productPrice} Fcfa
+            {productPrice} Fcfa <span> 1200 Fcfa</span>
           </h4>
         </div>
         <div className="CardProduct-groupBtn">
@@ -43,4 +44,4 @@ const CardProductComponent: React.FC<CardProductComponentProps> = ({
   );
 };
 
-export default CardProductComponent;
+export default CardPromoProductComponent;

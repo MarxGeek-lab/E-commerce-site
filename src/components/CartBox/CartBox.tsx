@@ -7,10 +7,15 @@ import plus from "../../assets/svg/plus.svg";
 import deletes from "../../assets/svg/delete.svg";
 import product from "../../assets/images/product1.jpg";
 
-const CartShoppingBox: React.FC = () => {
+interface CartShoppingBoxProps {
+  openCartBox?: boolean;
+  isOpenCartBox: (bool:boolean) => void;
+}
+
+const CartShoppingBox: React.FC<CartShoppingBoxProps> = ({openCartBox, isOpenCartBox}) => {
   return (
-    <div className="CartShopping">
-      <div className="CartShopping-close">&times;</div>
+    <div className="CartShopping" style={openCartBox ? {display:"block"}:{display:"none"}}>
+      <button className="CartShopping-close" type='button' onClick={() => isOpenCartBox(!openCartBox)}>&times;</button>
       <div className="CartShopping-head">
         <h6>Mon Panier</h6>
         <span>( 0 )</span>
@@ -24,16 +29,16 @@ const CartShoppingBox: React.FC = () => {
                 <h3 className="CardProductCart-prodName">Name</h3>
                 <h4 className="CardProductCart-prodPrice"> 1 200 Fcfa</h4>
                 <div className="CardProductCart-qtyBox">
-                  <button className="CardProductCart-btnMinus">
+                  <button className="CardProductCart-btnMinus" type='button'>
                     <img src={minus} alt="Decrease Quantity" />
                   </button>
                   <span>0</span>
-                  <button className="CardProductCart-btnPlus">
+                  <button className="CardProductCart-btnPlus" type='button'>
                     <img src={plus} alt="Increase Quantity" />
                   </button>
                 </div>
               </div>
-              <button className="CardProductCart-btnTrash">
+              <button className="CardProductCart-btnTrash" type='button'>
                 <img src={deletes} alt="Delete" />
               </button>
             </div>
@@ -45,7 +50,7 @@ const CartShoppingBox: React.FC = () => {
         </div>
       </div>
       <div className="CartShopping-footer">
-        <button className="CartShopping-btnCommand">Lancer la commande</button>
+        <button className="CartShopping-btnCommand" type='button'>Lancer la commande</button>
       </div>
     </div>
   );

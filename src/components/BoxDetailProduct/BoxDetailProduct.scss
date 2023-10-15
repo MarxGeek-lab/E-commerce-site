@@ -1,0 +1,22 @@
+@import "../../global/mixins.scss";
+@import "../../global/variables.scss";
+
+.BoxDetailsProduct {
+    width: 800px;
+    height: auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 3px;
+
+    &-img {
+        padding: 10px;
+        border-radius: 4px;
+        background-color: $whitesmoke;
+        margin-right: 2rem;
+        &>img {
+            height: 300px;
+            width: 300px;
+            object-fit: contain;
+        }
+    }
+}

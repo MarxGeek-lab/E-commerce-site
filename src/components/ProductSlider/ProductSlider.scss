@@ -1,0 +1,24 @@
+.ProductSlider {
+    margin-bottom: 50px;
+    &-carousel {
+        .CardProduct {
+            margin: 0;
+            grid-column-end: span 3;
+
+            &-percentReduce {
+                display: none;
+            }
+
+            &-footerCard {
+                display: none;
+            }
+
+            &-imgProd {
+                width: 100%;
+                height: 180px;
+                object-fit: contain;
+                background-color: white;
+            }
+        }
+    }
+}

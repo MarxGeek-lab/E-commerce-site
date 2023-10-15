@@ -2,9 +2,6 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 
-function valuetext(value: number) {
-  return `${value} Fcfa`;
-}
 
 export default function PriceSlider() {
   const [value, setValue] = React.useState<number[]>([1000, 100000]);
@@ -13,16 +10,22 @@ export default function PriceSlider() {
     setValue(newValue as number[]);
   };
 
+  function valuetext(value: number) {
+    return `${value} Fcfa`;
+  }
+  
+
   return (
-    <Box sx={{ width: 300 }}>
+    <Box sx={{ width: 200}}>
       <Slider
-        getAriaLabel={() => 'Temperature range'}
+        getAriaLabel={() => 'Prix'}
         value={value}
         onChange={handleChange}
-        valueLabelDisplay="auto"
         getAriaValueText={valuetext}
         min={1000}
         max={100000}
+        style={{color: "white", height: "4px"}}
+        valueLabelDisplay="on"
       />
     </Box>
   );

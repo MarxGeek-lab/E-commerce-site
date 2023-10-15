@@ -1,0 +1,120 @@
+@import "../../global/variables.scss";
+@import "../../global/mixins.scss";
+
+.ContactPage {
+    min-height: calc(100vh - 100px);
+    padding-top: 60px;
+    padding-bottom: 150px;
+}
+
+.Cordonnee {
+    background-color: $whitesmoke;
+    padding: 1.5rem;
+    border-radius: 3px;
+    border: 1px solid rgb(228, 228, 228);
+
+    @include mobile-portrait {
+        flex-direction: column;
+    }
+
+    &-avatar {
+        font-size: 5rem;
+        margin-right: 2rem;
+        color: $black-700;
+    }
+
+    &-nameCompany {
+        font-size: 30px; 
+        color: $orange;
+        
+        &>span {
+            font-size: 20px;
+            color: black;
+            font-family: 'gabriela';
+        }
+    }
+
+    &-p {
+        margin: 12px 0;
+
+        &>svg {
+            fill: $black-700;
+            margin-right: 12px;
+            font-size: 16px;
+        }
+    }
+
+    &-btnWhatsapp {
+        margin-top: 20px;
+        height: 45px;
+        background-color: rgb(1, 183, 65);
+        border-radius: 4px;
+
+        &>a {
+            height: 100%;
+            color: $whitesmoke;
+            padding: 0 1.5rem;
+
+            &:visited {
+                color: $whitesmoke;
+            }
+
+            &>svg {
+                font-size: 1.6rem;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.ContactForm {
+    margin-top: 80px;
+
+    &-h1 {
+        margin: auto;
+        width: max-content;
+        font-size: 25px;
+    }
+
+    &-form {
+        width: 100%;
+        margin-top: 40px;
+        background-color: $whitesmoke;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    &-field {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+
+    &-btnSend {
+        height: 40px;
+        padding: 0 2rem;
+        border-radius: 4px;
+        color: $whitesmoke;
+        background: $orange;
+        font-size: 16px;
+        margin-top: 30px;
+    }
+}
+
+.Field {
+    &-text {
+        font-size: 14px;
+        margin-bottom: 2px;
+        color: $black-700;
+    }
+
+    &-input {
+        height: 40px;
+        text-indent: 10px;
+        font-size: 14px;
+        border: 1px solid rgb(213, 213, 213);
+    }
+
+    &>textarea {
+        border: 1px solid rgb(213, 213, 213);
+    }
+}

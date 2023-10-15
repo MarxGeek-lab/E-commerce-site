@@ -1,0 +1,26 @@
+@import '../../global/mixins.scss';
+
+.OffersPage {
+    padding: 60px 0 150px;
+    min-height: calc(100vh - 100px);
+
+    &-groupProduct {
+        gap: 30px;
+        .CardProduct {
+            margin: 0;
+            grid-column-end: span 3;
+
+            @include tablet-portrait {
+                grid-column-end: span 4;
+            }
+
+            @include mobile-landscape {
+                grid-column-end: span 6;
+            }
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}

@@ -1,4 +1,5 @@
 @import "../../global/variables.scss";
+@import "../../global/mixins.scss";
 
 // eslint-disable-next-line
 .Header {
@@ -16,26 +17,15 @@
     justify-content: space-between;
     grid-column: 5 / span 9;
     position: relative;
-  }
 
-  &-openCart {
-    background: none;
-    position: relative;
-    border: none;
-    margin-left: 3rem;
-
-    >img {
-      width: 40px;
-      height: auto;
+    @include tablet-landscape {
+      grid-column: 4 / span 9;
     }
 
-    >span {
-      font-size: 18px;
-      position: absolute;
-      top: -20%;
-      left: 100%;
-      color: $orange;
-    }
+    @include tablet-portrait {
+      grid-column: 10 / span 3;
+      flex-direction: row-reverse;
+     }
   }
 
   &-logo {
@@ -86,6 +76,16 @@
     font-size: 14px;
     padding: 0 4rem;
     transition: 0.3s;
+    white-space: nowrap;
+
+    @include tablet-portrait {
+      padding:  0 2rem;
+     }
+
+     @include mobile-portrait {
+      padding:  0 10px;
+      font-size: 13px;
+     }
 
     &:hover,
     &:focus {
@@ -100,12 +100,20 @@
   height: 40px;
 
   >input {
-    width: 600px;
+    width: 480px;
     height: 100%;
     border: none;
     background-color: $black-700;
     padding: 0 1rem;
     color: whitesmoke;
+
+    @include tablet-landscape {
+      width: 400px;
+    }
+
+    @include tablet-portrait {
+     display: none;
+    }
 
     &:focus {
       outline: 1px solid $orange;
@@ -116,7 +124,7 @@
     }
   }
 
-  >button {
+  &-submit {
     background-color: $orange;
     height: 100%;
     width: 50px;
@@ -130,5 +138,115 @@
       width: 50%;
       color: white;
     }
+
+    @include tablet-portrait {
+      display: none;
+     }
   }
+
+  &-submit2 {
+    background: none;
+    border: none;
+    display: none;
+    margin-left: 2rem;
+
+    >svg {
+      height: auto;
+      width: 22px;
+      color: $orange;
+    }
+
+    @include tablet-portrait {
+      display: block;
+     }
+  }
+}
+
+.CartBox {
+  &-infosCart {
+    margin-right: 12px;
+    height: 40px;
+    justify-content: space-between;
+
+    &>span {
+      color: white;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    &>b {
+      font-size: 13px;
+      color: white;
+      white-space: nowrap;
+    }
+  } 
+
+  &-openCart {
+    background: none;
+    position: relative;
+    border: none;
+
+    >img {
+      width: 40px;
+      height: auto;
+
+      @include tablet-portrait {
+        width: 30px;
+       }
+    }
+
+    >span {
+      font-size: 18px;
+      position: absolute;
+      top: -20%;
+      left: 100%;
+      color: $orange;
+    }
+  }
+}
+
+.FormSearchMobile {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.649);
+  z-index: 10001;
+
+  &.open {
+    display: flex;
+  }
+  
+  .SearchForm {
+    min-height: 50px;
+  
+    &>input {
+      width: 480px;
+      height: 100%;
+
+      @include tablet-portrait {
+       display: block;
+       width: 300px;
+      }
+    }
+  
+    &-submit {
+      background-color: $orange;
+      height: 100%;
+      width: 50px;
+  
+      >svg {
+        height: auto;
+        width: 50%;
+        color: white;
+      }
+  
+      @include tablet-portrait {
+        display: block !important;
+       }
+    }
+  }
+  
 }

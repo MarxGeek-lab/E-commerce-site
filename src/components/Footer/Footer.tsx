@@ -37,6 +37,9 @@ const Footer: React.FC = () => {
                     </ul>
                 </div>
             </div>
+            <div className="Footer-copyright">
+                <p>&copy; {new Date().getFullYear()}. Réalisé par <b>MarxTeck</b></p>
+            </div>
         </footer>
     );
 };
