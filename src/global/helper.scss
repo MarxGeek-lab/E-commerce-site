@@ -72,3 +72,15 @@
 .EllipsisLine5 {
   -webkit-line-clamp: 5;
 }
+
+.Close {
+  position: absolute;
+  font-size: 2rem;
+  top: 1%;
+  right: 1%;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: rgb(45, 45, 45);
+  color: white;
+}

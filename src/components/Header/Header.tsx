@@ -7,7 +7,6 @@ import "./Header.scss";
 import cart_logo from "../../assets/svg/cart.svg";
 import CartShoppingBox from "../CartBox/CartBox";
 import { CONTACT_PAGE, HOME_PAGE, PRODUCT_PAGE, PROMOTION_PAGE } from "../../settings/constant";
-import BoxDetailProductComponent from "../BoxDetailProduct/BoxDetailProduct";
 
 const Header: React.FC = () => {
   const [openCartBox, isOpenCartBox] = useState(false);
@@ -33,7 +32,6 @@ const Header: React.FC = () => {
         chatMessage="Bienvenu"
         statusMessage="hello"
       />
-      <BoxDetailProductComponent />
       <div className="FormSearchMobile"  onClick={closeFormSearchMobile}>
         <form action="" method="post" className="SearchForm">
           <input

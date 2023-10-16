@@ -1,5 +1,5 @@
 import React from "react";
-import { FaBuilding, FaMapMarked, FaPhone, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+import { FaBuilding, FaMapMarked, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 
 import "./Contact.scss";
 

@@ -2,21 +2,102 @@
 @import "../../global/variables.scss";
 
 .BoxDetailsProduct {
-    width: 800px;
+    width: 900px;
     height: auto;
     padding: 2rem;
     background-color: white;
     border-radius: 3px;
+    position: relative;
+
+    @include tablet-portrait {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    &-productPresentate {
+        width: 100%;
+        margin-bottom: 2rem;
+
+        @include mobile-landscape {
+            flex-direction: column;
+        }
+    }
 
     &-img {
         padding: 10px;
         border-radius: 4px;
         background-color: $whitesmoke;
         margin-right: 2rem;
-        &>img {
-            height: 300px;
-            width: 300px;
-            object-fit: contain;
+
+        @include mobile-landscape {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+            margin-right: 0;
+            padding: 0;
+        }
+    }
+
+    &-infosProduct {
+        width: 55%;
+
+        @include mobile-landscape {
+            width: 100%;
+        }
+    }
+
+    &-nameProduct {
+        font-size: 22px;
+        font-weight: 500;
+    }
+
+    &-price {
+        font-size: 30px;
+        font-weight: bold;
+        margin: 12px 0;
+    }
+
+    &-select {
+        &>span {
+            white-space: nowrap;
+            font-size: 14px;
+            width: 50px;
+        }
+    }
+
+    &-description {
+        margin-top: 10px;
+        &>span {
+            font-size: 14px;
+            position: relative;
+
+            &::before {
+                content: "";
+                height: 1px;
+                width: 500%;
+                background-color: rgb(219, 219, 219);
+                position: absolute;
+                left: 115%;
+                bottom: 20%;
+            }
+        }
+    }
+
+    &-text {
+        margin-top: 10px;
+        font-size: 14px;
+        overflow-wrap: break-word;
+    }
+
+    &-productSlider {
+        .ProductSlider {
+            width: 100%;
+            padding: 0;
+            margin-bottom: 0;
+        }
+
+        @include mobile-landscape {
+            display: none;
         }
     }
 }

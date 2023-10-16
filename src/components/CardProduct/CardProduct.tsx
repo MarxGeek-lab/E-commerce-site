@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import "./CardProduct.scss";
 
 import add_cart from "../../assets/svg/add-to-cart.svg"
 import whatsapp from "../../assets/svg/whatsapp-logo.svg"
+import BoxDetailProductComponent from '../BoxDetailProduct/BoxDetailProduct';
 
 interface CardProductComponentProps {
   key: string;
@@ -18,8 +19,12 @@ const CardProductComponent: React.FC<CardProductComponentProps> = ({
   productImageSrc,
   key
 }) => {
+
+  const [open, isOpen] = useState<boolean>(false);
+
   return (
-    <div className="CardProduct" key={key}>
+    <div className="CardProduct" key={key} >
+      {/* <BoxDetailProductComponent openPopup={open} isOpenPopup={isOpen} /> */}
       <img className="CardProduct-imgProd" src={productImageSrc} alt={productName} />
       <div className="CardProduct-footerCard">
         <div className="CardProduct-infosProd">

@@ -1,55 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import PopupLayoutComponent from "../PopupLayout/PopupLayout";
+import ImageZoom from "react-image-zooom";
+
 import ProductSlide from "../ProductSlider/ProductSlide";
-import { FormControl, InputLabel, Select } from "@mui/material";
 
 import product from "../../assets/images/product1.jpg";
 
 import "./BoxDetailProduct.scss";
+import SelectControlComponent from "../SelectControl/SelectControl";
 
-const BoxDetailProductComponent:React.FC =() => {
+interface BoxDetailProductComponentProps {
+    openPopup?: boolean;
+    isOpenPopup: (bool: boolean) => void;
+}
+
+const BoxDetailProductComponent:React.FC<BoxDetailProductComponentProps> =({openPopup, isOpenPopup}) => {
+
+    const size = ["M","S","X","XL"];
+    const color = ["blue","Rouge","Black"];
+
     return (
-        <PopupLayoutComponent>
             <div className="BoxDetailsProduct">
+                <button className="Close Dflex Dflex-alignCenter Dflex-justifyCCenter" type="button"
+                onClick={() => isOpenPopup(!openPopup)}>&times;</button>
                 <div className="BoxDetailsProduct-productPresentate Dflex">
                     <div className="BoxDetailsProduct-img">
-                        <img src={product} alt="" />
+                        <ImageZoom src={product} alt="product" zoom="150" width="300" className="BoxDetailsProduct-imgZoom"/>
                     </div>
                     <div className="BoxDetailsProduct-infosProduct">
                         <h1 className="BoxDetailsProduct-nameProduct EllipsisLine2">Basket chaussure</h1>
                         <h3 className="BoxDetailsProduct-price">1 250 Fcfa</h3>
-                        <div className="BoxDetailsProduct-color">
+                        <div className="BoxDetailsProduct-select Dflex Dflex-alignCenter">
                             <span>Color :</span>
-                            <FormControl sx={{ mr: 5, minWidth: 120 }}>
-                                <InputLabel
-                                    htmlFor="grouped-native-select"
-                                    sx={{mb: 20, color: "white", fontSize: "15px", position: "absolute", top: -10}}
-                                >
-                                    Catégories
-                                </InputLabel>
-                                <Select
-                                    style={{
-                                    height: "35px",
-                                    border: "1px solid white",
-                                    color: "white",
-                                    fontSize: "16px",
-                                    }}
-                                    native
-                                    defaultValue=""
-                                    id="grouped-native-select"
-                                    label="Grouping"
-                                >
-                                    <option aria-label="None" value="" />
-                                    <optgroup label="Electronique">
-                                    <option value={1}>Option 1</option>
-                                    <option value={2}>Option 2</option>
-                                    </optgroup>
-                                    <optgroup label="Vêtements">
-                                    <option value={3}>Option 3</option>
-                                    <option value={4}>Option 4</option>
-                                    </optgroup>
-                                </Select>
-                            </FormControl>
+                            <SelectControlComponent array={color} placeholder="Couleur" />
+                        </div>
+                        <div className="BoxDetailsProduct-select Dflex Dflex-alignCenter">
+                            <span>Size :</span>
+                            <SelectControlComponent array={size} placeholder="Taille"/>
+                        </div>
+                        <div className="BoxDetailsProduct-description">
+                            <span>Description : </span>
+                            <div className="BoxDetailsProduct-text">
+                                DescriptionDescriptionDescriptionDescriptionDescriptionDescription
+                                DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription
+                                DescriptionDescriptionDescription
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -57,7 +52,6 @@ const BoxDetailProductComponent:React.FC =() => {
                     <ProductSlide />
                 </div>
             </div>
-        </PopupLayoutComponent>
     );
 };
 
