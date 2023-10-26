@@ -14,6 +14,11 @@
         padding: 1rem;
     }
 
+    @include mobile-landscape {
+        overflow: scroll !important;
+        height: 90vh;
+    }
+
     &-productPresentate {
         width: 100%;
         margin-bottom: 2rem;
@@ -94,6 +99,12 @@
             width: 100%;
             padding: 0;
             margin-bottom: 0;
+
+            .CardProduct {
+                &-imgProd {
+                    height: 130px;
+                }
+            }
         }
 
         @include mobile-landscape {

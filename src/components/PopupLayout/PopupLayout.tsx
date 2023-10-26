@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode } from "react";
 
 import "./PopupLayout.scss";
 
@@ -10,7 +10,7 @@ interface PopupLayoutProps {
 
 const PopupLayoutComponent:React.FC<PopupLayoutProps> = ({ children, openPopup, isOpenPopup }) => {
 
-    const closePopup = (e:React.MouseEvent) => {
+    const closePopup = async (e:React.MouseEvent) => {
         const overlay = document.querySelector(".PopupLayout");
         if(e.target !== overlay) return;
         isOpenPopup(!openPopup);

@@ -6,10 +6,10 @@ import "react-multi-carousel/lib/styles.css";
 import "./Home.scss";
 
 import CardProductComponent from "../../components/CardProduct/CardProduct";
+import CardPromoProductComponent from "../../components/CardProduct/CardPromoProduct";
 import { products } from "../Product/Product";
 
 import img1 from "../../assets/images/img1.webp";
-import CardPromoProductComponent from "../../components/CardProduct/CardPromoProduct";
 
 export interface Products {
 	name: string;
@@ -18,6 +18,7 @@ export interface Products {
 }
 
 const Home: React.FC = () => {
+
 	const responsive = {
 		superLargeDesktop: {
 			// the naming can be any, depends on you.
